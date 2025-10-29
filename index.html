@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .accord-box {
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .accord-title {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .accord-title:hover {
+            border-radius: 10px;
+        }
+
+        .open {
+            border-top: 2px solid black;
+            padding-top: 10px;
+        }
+
+        .content {
+            height: 0px;
+            overflow: hidden;
+            transition: 600ms;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="accord-box">
+            <h2 class="accord-title">Question 1</h2>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+            </div>
+        </div>
+        <div class="accord-box">
+            <h2 class="accord-title">Question 2</h2>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+            </div>
+        </div>
+        <div class="accord-box">
+            <h2 class="accord-title">Question 3</h2>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+            </div>
+        </div>
+        <div class="accord-box">
+            <h2 class="accord-title">Question 4</h2>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+            </div>
+        </div>
+        <div class="accord-box">
+            <h2 class="accord-title">Question 5</h2>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi itaque harum molestiae odit,
+                    deserunt voluptatum, neque facilis tempora optio molestias quasi distinctio, quidem quo magni
+                    temporibus dolores vel velit facere.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var accordTitle = document.querySelectorAll(".accord-title");
+
+        for (let title of accordTitle) {
+            title.addEventListener(
+                "click",
+                function () {
+                    let openContent = document.querySelector(".open");
+                    let accordContent = title.nextElementSibling;
+
+                    if (openContent != null) {
+                        openContent.classList.remove("open");
+                        openContent.style = ""
+                    }
+                    if (openContent == accordContent) return
+
+                    accordContent.classList.add("open");
+                    accordContent.style.height = accordContent.scrollHeight + 10 + "px";
+                    accordContent.style.overflow = ""
+                }
+            )
+        }
+
+    </script>
+</body>
+
+</html>
